@@ -1,3 +1,17 @@
 spring:
   application:
     name: ihmsservicegateway
+  cloud:
+    gateway:
+      routes:
+        - id: ihms-api-route
+          uri: ${IHMS_API_ROUTE_URI:http://localhost:9091}
+          predicates:
+            - Path=/api/ihms/**
+        - id: ihms-auth-route
+          uri: ${IHMS_AUTH_ROUTE_URI:http://localhost:9092}
+          predicates:
+            - Path=/api/auth/**
+
+server:
+  port: 9093
