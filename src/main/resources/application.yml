@@ -12,3 +12,6 @@ spring:
           uri: ${IHMS_AUTH_ROUTE_URI:http://localhost:9092}
           predicates:
             - Path=/api/auth/**
+
+server:
+  port: 9093
