@@ -15,3 +15,29 @@ spring:
 
 server:
   port: 9093
+
+logging:
+  file:
+    name: /var/ihms/log/ihmsservicegateway/ihmsservicegateway.log
+
+ihms:
+  cors:
+    allowedOrigins:
+      - https://dev-ihms.com
+      - https://dev2-ihms.com
+      - https://qa-ihms.com
+      - https://qa2-ihms.com
+      - https://satging-ihms.com
+      - https://sandbox-ihms.com
+      - https://demo-ihms.com
+      - https://training-ihms.com
+      - https://ihms.com
+      - http://localhost:4200
+      - http://127.0.0.1:4200
+    allowedMethods:
+      - '*'
+    allowedHeaders:
+      - '*'
+    maxAge: 43200
+    exposedHeaders:
+      - '*'
